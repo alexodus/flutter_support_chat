@@ -25,7 +25,7 @@ class SupportChat {
     required this.lastEditTimestmap,
   });
 
-  static SupportChat fromFireStoreQuery(QueryDocumentSnapshot doc) {
+  static SupportChat fromFireStoreQuery(QueryDocumentSnapshot<Map<String, dynamic>> doc) {
     return SupportChat(
       id: doc.id,
       requesterEmail: doc.data()['email'],
@@ -40,7 +40,7 @@ class SupportChat {
     );
   }
 
-  static SupportChat fromFireStore(DocumentSnapshot doc) {
+  static SupportChat fromFireStore(DocumentSnapshot<Map<String, dynamic>> doc) {
     return SupportChat(
       id: doc.id,
       requesterEmail: doc.data()!['email'],
@@ -68,7 +68,7 @@ class SupportChat {
     };
   }
 
-  Future<void> update(CollectionReference support) async {
+  Future<void> update(CollectionReference<Map<String, dynamic>> support) async {
     return await support.doc(id).update(toFireStore());
   }
 }
