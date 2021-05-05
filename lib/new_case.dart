@@ -21,7 +21,7 @@ class FlutterSupportChatCreateNewCase extends StatelessWidget {
       padding: EdgeInsets.all(5),
       child: ElevatedButton(
         onPressed: () async {
-          final DocumentReference d = await support.add(
+          final DocumentReference<Map<String, dynamic>> d = await support.add(
             SupportChat(
               id: '',
               requesterEmail: widget.widget.createCaseText,
