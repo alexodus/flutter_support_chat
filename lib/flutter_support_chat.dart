@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_support_chat/conversation.dart';
 import 'package:flutter_support_chat/overview.dart';
 
-late CollectionReference support;
+late CollectionReference<Map<String, dynamic>> support;
 late FirebaseFirestore instance;
 
 /// Flutter package to implement a fire store chat between customer and product support
